@@ -1,5 +1,8 @@
 const dataEn = [
     {
+        sectionName : "Welcome"
+    },
+    {
         sectionName : "CV",
         1: {
             year: 2014,
@@ -37,6 +40,6 @@ const dataEn = [
         sectionName: "Contact"
     },
     {
-        sectionName: "Online JS Games"
+        sectionName: "JsGames"
     }
 ]

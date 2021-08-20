@@ -78,23 +78,34 @@ window.onload = () => {
  * SCROLL SPY ------------------------------
  * SCROLL SPY ------------------------------
  */
+
  const ratio = .6
  let observer = null
 /**
  * 
  * @param {HTMLElement} element 
  */
-const activate = (element) => {
+const activateLink = (element) => {
     const id = element.getAttribute('id')
     const anchor = document.querySelector(`a[href="#${id}"]`)
     if (anchor === null) {
         return null
     }
-
     anchor.parentElement
         .querySelectorAll('.active')
         .forEach(node => node.classList.remove('active'))
     anchor.classList.add('active')
+}
+
+/**
+ * 
+ * @param {HTMLElement} element 
+ */
+const animateBlock = (element) => {
+    document
+        .querySelectorAll('.sectionActive')
+        .forEach(node => node.classList.remove('sectionActive'))
+    element.childNodes[1].classList.add('sectionActive')
 }
 
 /**
@@ -105,7 +116,8 @@ const activate = (element) => {
 const callback = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.intersectionRatio > 0) {
-            activate(entry.target)
+            activateLink(entry.target)
+            animateBlock(entry.target)
         }
     })
 }

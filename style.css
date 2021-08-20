@@ -4,13 +4,24 @@ html, body {
     scroll-behavior: smooth;
 }
 html {
-    background: radial-gradient(aliceblue, whitesmoke);
-    font-family: helvetica, sans-serif;
+    background: center fixed url('./media/background.jpg');
+    background-size: cover;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
 }
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+h1, h2, h3, h4 {
+    font-weight: normal;
+    margin: 0;
+}
+hr {
+    border: none;
+    border-top: 1px dashed white;
 }
 a {
     color: inherit;
@@ -19,15 +30,21 @@ a {
 a:hover {
     opacity: .6;
 }
-nav {
+header {
     position: fixed;
     width: 100vw;
+    height: 3rem;
     z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(rgb(0, 0, 0, 0.6) 50%, transparent 100%);
+    padding: 1.5rem 0 2rem 0;
+}
+nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(whitesmoke 50%, transparent 100%);
-    padding: .5rem 0 2rem 0;
 }
 nav ul {
     margin: 1rem;
@@ -35,19 +52,37 @@ nav ul {
     text-align: center;
     list-style: none;
 }
+
 .navBlankSpace {
-    height: 5rem;
+    height: 20vh;
 }
-header, section {
-    width: 60vw;
-    padding: 2rem;
-    background: rgba(189, 156, 156, 0.08);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-    border-radius: 1.5rem;
-    margin-top: 1.5rem;
+.sectionContainer {
+    position: relative;
+    padding-top: 5.5rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
-
+section {
+    position: relative;
+    width: 60%;
+    padding: 5rem 2rem;
+    background: rgba(77, 56, 56, 0.253);
+    box-shadow: 0 5px 10px rgba(8, 94, 8, 0.09);
+    border-radius: .25rem;
+    margin: 1rem auto;
+    border-left: .33rem solid transparent;
+    border-right: .33rem solid transparent;
+    opacity: .5;
+    transition: transform .6s, background-color .3s, opacity .3s, border .6s, border-radius .9s;
+}
+.sectionActive {
+    opacity: 1;
+    background-color: rgba(23, 37, 25, 0.753);
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+}
 .elementsContainer {
     display: grid;
     grid-template-columns: repeat(2, auto);    

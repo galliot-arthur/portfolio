@@ -12,47 +12,77 @@
 </head>
 
 <body>
-    <nav class="navbar"></nav>
-    <div class="navBlankSpace"></div>
     <header>
-        <h3>Arthur Galliot - Web Developer</h3>
-        <h1>Welcome</h1>
+        <div>
+            <h3>Arthur Galliot</h3>
+            <h4>Web Developer</h4>
+        </div>
+        <nav class="navbar"></nav>
     </header>
+    <div class="navBlankSpace"></div>
     <main>
-        <section id="CV" class="cv" data-spy>
-            <h2>BIO / CV</h2>
-            <hr>
-            <div class="cvContainer"></div>
-        </section>
+
+        <div class="sectionContainer" id="Welcome" data-spy>
+            <section>
+                <h1>Welcome</h1>
+            </section>
+        </div>
+
+        <div class="sectionContainer" id="CV" data-spy>
+            <section>
+                <h2>BIO / CV</h2>
+                <hr>
+                <div class="cvContainer"></div>
+            </section>
+        </div>
+
+        <div class="sectionContainer" id="Realisations" data-spy>
+            <section>
+                <h2>Réalisations</h2>
+                <article>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores suas minus vitae quisquam
+                    obcaecati?
+                </article>
+                <article>
+                    Adipisicing elit. Maiores sed quisquam animi veniam, et nemo? Quas minus vitae quisquam obcaecati?
+                </article>
+                <article>
+                    Lorem ipsum dolor, sit amet consectetur aseniam, et nemo? Quas minus vitae quisquam obcaecati?
+                </article>
+            </section>
+        </div>
+
+        <div class="sectionContainer" id="Contact" data-spy>
+            <section>
+                <h2>Contact</h2>
+                <a href="mailto:galliot.arthur@gmail.com">Email-me</a>
+
+                <form action="" class="contact__form">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <input type="phone" placeholder="Phone Number">
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+        </div>
 
 
-        <section id="Realisations" class="works" data-spy>
-            <h2>Réalisations</h2>
-            <article>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores suas minus vitae quisquam obcaecati?
-            </article>
-            <article>
-                Adipisicing elit. Maiores sed quisquam animi veniam, et nemo? Quas minus vitae quisquam obcaecati?
-            </article>
-            <article>
-                Lorem ipsum dolor, sit amet consectetur aseniam, et nemo? Quas minus vitae quisquam obcaecati?
-            </article>
-        </section>
+        <div class="sectionContainer" id="JsGames" data-spy>
+            <section>
+                <h2>JsGames</h2>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur magnam repellat iure rerum fuga?
+                Voluptate, excepturi perferendis dolorem saepe molestiae temporibus quia iusto laboriosam sit qui
+                reiciendis aliquid eligendi deleniti recusandae repellat soluta laborum quisquam facilis ab assumenda
+                facere, quae eaque. Saepe, libero? Consequuntur delectus ipsam aperiam magni ad?
+            </section>
+        </div>
 
 
-        <section id="Contact" class="contact" data-spy>
-            <h2>Contact</h2>
-            <a href="mailto:galliot.arthur@gmail.com">Email-me</a>
-
-            <form action="" class="contact__form">
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="phone" placeholder="Phone Number">
-                <button type="submit">Send</button>
-            </form>
-        </section>
     </main>
+
+
     <footer>
+        <hr>
         Lorem ipsum dolor sit.
     </footer>
 </body>
