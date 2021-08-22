@@ -6,6 +6,10 @@
 
 const nav = document.querySelector('.navbar')
 const cvContainer = document.querySelector('.cvContainer')
+const enButton = document.querySelector('#enButton')
+const frButton = document.querySelector('#frButton')
+const introContainer = document.querySelector('.intro__container')
+const contactContainer = document.querySelector('#Contact')
 
 /**
  * 
@@ -15,7 +19,9 @@ const cvContainer = document.querySelector('.cvContainer')
  */
 const createHTMLElement = (type, className) => {
     let element = document.createElement(type)
-    element.classList.add(className)
+    if (className !== null) {
+        element.classList.add(className)
+    }
     return element
 }
 
@@ -31,6 +37,21 @@ const getNavigation = (data) => {
         //a.setAttribute('id', element.sectionName)
         nav.appendChild(a)
     })
+}
+
+/**
+ * 
+ * @param {Array} data 
+ */
+const getIntroduction = (data) => {
+    let title = createHTMLElement('h1')
+    let bio = createHTMLElement('p')
+    title.innerHTML = data[0].sectionName
+    bio.innerHTML = data[0].bio
+    introContainer.appendChild(title)
+    introContainer.appendChild(createHTMLElement('hr'))
+    introContainer.appendChild(bio)
+    
 }
 /**
  * 
@@ -52,6 +73,7 @@ const getCVElement = (object, elementContainer) => {
         }
     }
 }
+
 /**
  * Create elements container in CV part.
  * @param {Object} data 
@@ -60,18 +82,54 @@ const getCV = (data, i) => {
     
     let elementsContainer = createHTMLElement('div', 'elementsContainer')
     cvContainer.append(elementsContainer)
-
     getCVElement(Object.entries(data[i]), elementsContainer)
 
 }
 
+/**
+ * 
+ * @param {Array} data 
+ */
+const getContactForm = (data) => {
+    contactContainer.innerHTML = `
+    <section>
+    <h2>Contact</h2>
+    <a href="mailto:galliot.arthur@gmail.com">${data[3].sendMeMail}</a>
+
+    <form action="" class="contact__form">
+        <input type="text" placeholder="${data[3].name}">
+        <input type="email" placeholder="${data[3].mail}">
+        <input type="phone" placeholder="${data[3].phone}">
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        <button type="submit">${data[3].send}</button>
+    </form>
+</section>` 
+}
+
+/**
+ * 
+ * @param {Array} data 
+ */
+const pageGeneration = (data) => {
+    // clean elements
+    introContainer.innerHTML = ""
+    cvContainer.innerHTML = ""
+    nav.innerHTML = ""
+    // generate elements
+    getNavigation(data)
+    getIntroduction(data)
+    getCV(data, 1)
+    getCV(data, 2)
+    getContactForm(data)
+}
+
 
 window.onload = () => {
-    getNavigation(dataEn)
-    getCV(dataEn, 0)
-    getCV(dataEn, 1)
-    //getRealisations(dataEn)
+    pageGeneration(dataEn)
 }
+
+frButton.onclick = () => pageGeneration(dataFr)
+enButton.onclick = () => pageGeneration(dataEn)
 
 /**
  * SCROLL SPY ------------------------------
@@ -79,8 +137,10 @@ window.onload = () => {
  * SCROLL SPY ------------------------------
  */
 
- const ratio = .6
- let observer = null
+const ratio = .6
+let observer = null
+const spies =  document.querySelectorAll('[data-spy]')
+
 /**
  * 
  * @param {HTMLElement} element 
@@ -121,8 +181,6 @@ const callback = (entries, observer) => {
         }
     })
 }
-
-const spies =  document.querySelectorAll('[data-spy]')
 
 
 /**
