@@ -22,19 +22,47 @@ const dataEn = [
         sectionName : "Works",
         1: {
             year: 2021,
-            occupation: "Portofolio"
+            occupation: "Portofolio",
+            description: "Simple website using classic JS front technics to show you my own work. With Carousls, Parralax FX, Scroll Spy and entierely genereted on demand from simple JS local data-base.",
+            carousel: [
+                {
+                    url: "./media/",
+                    alt: "img portofolio technique",
+                    description: "Image showing this"
+                },
+                {
+                    url: "./media/",
+                    alt: "img portofolio technique",
+                    description: "Image showing this"
+                },
+                {
+                    url: "./media/",
+                    alt: "img portofolio technique",
+                    description: "Image showing this"
+                },
+            ]
         },
         2: {
             year: 2021,
-            occupation: "Online Drum Machine"
-        },
-        3: {
-            year: 2021,
-            occupation: "Cie LTS"
-        },
-        3: {
-            year: 2021,
-            occupation: "Marion Chabaud Architecte d'intérieur."
+            occupation: "Online Drum Machine",
+            description: "Sampler Sequencer allowing you to produce online music. Based on Web Audio API technologie.",
+            carousel: [
+                {
+                    url: "./media/",
+                    alt: "img portofolio technique",
+                    description: "Image showing this"
+                },
+                {
+                    url: "./media/",
+                    alt: "img portofolio technique",
+                    description: "Image showing this"
+                },
+                {
+                    url: "./media/",
+                    alt: "img portofolio technique",
+                    description: "Image showing this"
+                },
+            ]
         },
     },
     {
@@ -74,19 +102,47 @@ const dataFr = [
         sectionName : "Réalisations",
         1: {
             year: 2021,
-            occupation: "Portofolio"
+            occupation: "Portofolio",
+            description: "Portofolio personnel basé sur quelques techniques Javascript Front classiques. Avec un carousel, des effets de parallax au déffilement et entièrement généré par javascript via une simple base de donnée JS stockée localement.",
+            carousel: [
+                {
+                    url: "./media/",
+                    alt: "img portofolio technique",
+                    description: "Image montrant ceci"
+                },
+                {
+                    url: "./media/",
+                    alt: "img portofolio technique",
+                    description: "Image montrant ceci"
+                },
+                {
+                    url: "./media/",
+                    alt: "img portofolio technique",
+                    description: "Image montrant ceci"
+                },
+            ]
         },
         2: {
             year: 2021,
-            occupation: "Online Drum Machine"
-        },
-        3: {
-            year: 2021,
-            occupation: "Cie LTS"
-        },
-        3: {
-            year: 2021,
-            occupation: "Marion Chabaud Architecte d'intérieur."
+            occupation: "Online Drum Machine",
+            description: "Sampleur Séquenceur permettant la création de musique electronic en ligne. Basée sur la technologie Web Audio API.",
+            carousel: [
+                {
+                    url: "./media/",
+                    alt: "img portofolio technique",
+                    description: "Image showing this"
+                },
+                {
+                    url: "./media/",
+                    alt: "img portofolio technique",
+                    description: "Image showing this"
+                },
+                {
+                    url: "./media/",
+                    alt: "img portofolio technique",
+                    description: "Image showing this"
+                },
+            ]
         },
     },
     {

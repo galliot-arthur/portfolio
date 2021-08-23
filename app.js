@@ -10,6 +10,7 @@ const enButton = document.querySelector('#enButton')
 const frButton = document.querySelector('#frButton')
 const introContainer = document.querySelector('.intro__container')
 const contactContainer = document.querySelector('#Contact')
+const worksContainer = document.querySelector('.worksContainer')
 
 /**
  * 
@@ -86,6 +87,28 @@ const getCV = (data, i) => {
 
 }
 
+/* *
+ * 
+ * @param {Array} data 
+ */
+ const getRealisations = (data) => {
+    let title = createHTMLElement('h3')
+    title.innerHTML = data[2].sectionName
+    worksContainer.appendChild(title)
+
+    let carouselContainer = createHTMLElement('div', 'carouselContainer')
+    worksContainer.appendChild(carouselContainer)
+    carouselContainer.appendChild(createHTMLElement('div', 'articlesContainer'))
+    for (const [key, value] of Object.entries(data[2])) {
+        if (key === "sectionName") return 
+        else {
+            let articleContainer = createHTMLElement('article', 'articleContainer')
+            console.log('test')
+        }
+    }
+
+ }
+
 /**
  * 
  * @param {Array} data 
@@ -115,11 +138,13 @@ const pageGeneration = (data) => {
     introContainer.innerHTML = ""
     cvContainer.innerHTML = ""
     nav.innerHTML = ""
+    worksContainer.innerHTML = ""
     // generate elements
     getNavigation(data)
     getIntroduction(data)
     getCV(data, 1)
     getCV(data, 2)
+    getRealisations(data)
     getContactForm(data)
 }
 
