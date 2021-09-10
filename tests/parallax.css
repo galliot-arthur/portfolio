@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    background: center radial-gradient(red 0%, orange 20%, aliceblue 50%, rebeccapurple 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+}
+.emoji {
+    position: relative;
+    font-size: 8rem;
+    width: 20%;
+    text-shadow: 3px 3px 13px rgba(0, 4, 255, 0.9), -3px -6px 20px rgba(199, 15, 15, 0.09), -20px 20px 30px rgba(255, 255, 0, 0.1);
+}
+#a1 {
+    top: 2rem;
+    left: 20vw;
+}
+#a2 {
+    top: -2rem;
+    left: 70vw;
+}
+#a3 {
+    top: 10rem;
+    left: 0vw;
+}
+#a4 {
+    top: 6rem;
+    left: 40vw;
+}
+#a5 {
+    top: -2rem;
+    left: 70vw;
+}
+#a6 {
+    top: -10rem;
+    left: 20vw;
+}
+.form-group {
+    --border: royalblue;
+    --cursor: aliceblue;
+    position: relative;
+}
+.form-group input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+.form-group label {
+    display: grid;
+    grid-template-columns: 2em 1fr;
+    grid-template-areas: "checkbox label";
+    gap: .7em;
+}
+.form-group label::before, .form-group label::after {
+    display: block;
+    grid-area: checkbox;
+    content: "";
+    margin-top: .1em;
+}
+.form-group label::before {
+    width: 100%;
+    border: solid 1px var(--border);
+    height: 1em;
+    border-radius: 1em;
+    transition: background-color .3s, box-shadow .3s;
+}
+.form-group label::after {
+    position: relative;
+    left: 2px;
+    top: 2px;
+    width: calc(1em - 2px);
+    height: calc(1em - 2px);
+    background: var(--cursor);
+    border-radius: 50%;
+    transition: background-color .3s, transform .3s;
+    cursor: pointer;
+}
+.form-group input:checked + label::before {
+    background: var(--border)
+}
+.form-group input:checked + label::after {
+    /* background-color: var(--border); */
+    transform: translateX(1em);
+}
+.form-group input:focus + label::before {
+    box-shadow: 0 0 0 0.25em var(--border);
+}

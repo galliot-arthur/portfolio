@@ -200,6 +200,7 @@ const animateBlock = (element) => {
  */
 const callback = (entries, observer) => {
     entries.forEach(entry => {
+        console.log(entry.intersectionRatio)
         if (entry.intersectionRatio > 0) {
             activateLink(entry.target)
             animateBlock(entry.target)
@@ -221,6 +222,12 @@ const observe = (elements) => {
         rootMargin: `-${window.innerHeight - y - 1}px 0px -${y}px 0px`
     })
     spies.forEach(spy => observer.observe(spy))
+    let hr_y = createHTMLElement('hr', 'hr_y')
+    let hr_y_bis = createHTMLElement('hr', 'hr_y')
+    hr_y.style.top = `${window.innerHeight - y - 3}px`
+    hr_y_bis.style.top = `${y}px`
+    //document.querySelector('body').appendChild(hr_y)
+    //document.querySelector('body').appendChild(hr_y_bis)
 }
 
 /**
@@ -251,3 +258,13 @@ if (spies.length > 0) {
         }
     }
 }
+
+let archive = function () {
+
+}
+
+
+for (var i = 0; i < 5 ; i++) {
+    console.log(i)
+}
+console.log('n :', n)
