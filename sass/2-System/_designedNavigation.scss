@@ -1,0 +1,59 @@
+.nav_container {
+    background: radial-gradient(orangered, aliceblue, yellowgreen);
+    background-size: auto;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+.grid_container {
+    position: relative;
+    width: 80vw;
+    max-width: 400px;
+    max-height: 400px;
+    height: 80vw;
+    display: grid;
+    grid-template-columns: 33.333% 33.333% 33.333%;
+    grid-template-rows: 33.333% 33.333% 33.333%;
+    margin: 10vw auto;
+}
+
+.grid_number {
+    position: absolute;
+    margin: 0 5px;
+}
+
+.grid_case {
+    background: white;
+    padding: 0;
+    border-radius: 50% 0;
+    /* animation: butterflyMenu 4s infinite; */
+}
+
+.grid_subCase {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: white;
+    overflow: hidden;
+    border-radius: 50% 0;
+    transition-duration: .6s;
+    transition-property: transform, box-shadow, border-radius;
+    &:hover {
+        z-index: 2;
+        transform: scale(1.062);
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05), -2px -2px 20px rgba(255, 68, 0, 0.06);
+        border-radius: 0 0;
+        animation: none;
+        padding: 1px 2px;
+    }
+}
+
+.grid_text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+    left: 10%;
+    color: yellowgreen;
+    font-size: 1.3rem;
+}

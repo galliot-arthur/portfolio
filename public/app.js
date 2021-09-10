@@ -32,10 +32,10 @@ const createHTMLElement = (type, className) => {
  */
 const getNavigation = (data) => {
     data.forEach(element => {
-        let a = createHTMLElement('a', 'nav__link')
+        let a = createHTMLElement('a', 'navbar__link')
         a.href = `#${element.sectionName}`
         a.innerHTML = element.sectionName
-        //a.setAttribute('id', element.sectionName)
+            //a.setAttribute('id', element.sectionName)
         nav.appendChild(a)
     })
 }
@@ -45,29 +45,29 @@ const getNavigation = (data) => {
  * @param {Array} data 
  */
 const getIntroduction = (data) => {
-    let title = createHTMLElement('h1')
-    let bio = createHTMLElement('p')
-    title.innerHTML = data[0].sectionName
-    bio.innerHTML = data[0].bio
-    introContainer.appendChild(title)
-    introContainer.appendChild(createHTMLElement('hr'))
-    introContainer.appendChild(bio)
-    
-}
-/**
- * 
- * @param {Object} object 
- * @param {HTMLElement} elementContainer 
- */
+        let title = createHTMLElement('h1')
+        let bio = createHTMLElement('p')
+        title.innerHTML = data[0].sectionName
+        bio.innerHTML = data[0].bio
+        introContainer.appendChild(title)
+        introContainer.appendChild(createHTMLElement('hr'))
+        introContainer.appendChild(bio)
+
+    }
+    /**
+     * 
+     * @param {Object} object 
+     * @param {HTMLElement} elementContainer 
+     */
 const getCVElement = (object, elementContainer) => {
-    for(const [key, value] of object) {
+    for (const [key, value] of object) {
         if (key === "sectionName") {
             let title = document.createElement('h3')
             title.innerHTML = value
             elementContainer.prepend(createHTMLElement('div', 'cv__titleDecoration'))
             elementContainer.prepend(title)
         } else {
-            elementContainer.innerHTML+= `
+            elementContainer.innerHTML += `
             <div class="year">${value.year}</div>
             <div class="action">${value.occupation}</div>
             `
@@ -80,7 +80,7 @@ const getCVElement = (object, elementContainer) => {
  * @param {Object} data 
  */
 const getCV = (data, i) => {
-    
+
     let elementsContainer = createHTMLElement('div', 'elementsContainer')
     cvContainer.append(elementsContainer)
     getCVElement(Object.entries(data[i]), elementsContainer)
@@ -91,7 +91,7 @@ const getCV = (data, i) => {
  * 
  * @param {Array} data 
  */
- const getRealisations = (data) => {
+const getProductions = (data) => {
     let title = createHTMLElement('h3')
     title.innerHTML = data[2].sectionName
     worksContainer.appendChild(title)
@@ -100,14 +100,14 @@ const getCV = (data, i) => {
     worksContainer.appendChild(carouselContainer)
     carouselContainer.appendChild(createHTMLElement('div', 'articlesContainer'))
     for (const [key, value] of Object.entries(data[2])) {
-        if (key === "sectionName") return 
+        if (key === "sectionName") return
         else {
             let articleContainer = createHTMLElement('article', 'articleContainer')
             console.log('test')
         }
     }
 
- }
+}
 
 /**
  * 
@@ -126,7 +126,7 @@ const getContactForm = (data) => {
         <textarea name="message" id="message" cols="30" rows="10"></textarea>
         <button type="submit">${data[3].send}</button>
     </form>
-</section>` 
+</section>`
 }
 
 /**
@@ -139,12 +139,12 @@ const pageGeneration = (data) => {
     cvContainer.innerHTML = ""
     nav.innerHTML = ""
     worksContainer.innerHTML = ""
-    // generate elements
+        // generate elements
     getNavigation(data)
     getIntroduction(data)
     getCV(data, 1)
     getCV(data, 2)
-    getRealisations(data)
+    getProductions(data)
     getContactForm(data)
 }
 
@@ -156,6 +156,11 @@ window.onload = () => {
 frButton.onclick = () => pageGeneration(dataFr)
 enButton.onclick = () => pageGeneration(dataEn)
 
+
+
+
+
+
 /**
  * SCROLL SPY ------------------------------
  * SCROLL SPY ------------------------------
@@ -164,7 +169,7 @@ enButton.onclick = () => pageGeneration(dataEn)
 
 const ratio = .6
 let observer = null
-const spies =  document.querySelectorAll('[data-spy]')
+const spies = document.querySelectorAll('[data-spy]')
 
 /**
  * 
@@ -226,12 +231,12 @@ const observe = (elements) => {
     let hr_y_bis = createHTMLElement('hr', 'hr_y')
     hr_y.style.top = `${window.innerHeight - y - 3}px`
     hr_y_bis.style.top = `${y}px`
-    //document.querySelector('body').appendChild(hr_y)
-    //document.querySelector('body').appendChild(hr_y_bis)
+        //document.querySelector('body').appendChild(hr_y)
+        //document.querySelector('body').appendChild(hr_y_bis)
 }
 
 /**
- * Avoid unnescessary calculs
+ * Avoid unnecessary calculations
  * @param {Function} callback 
  * @param {number} delay 
  * @returns {Function}
@@ -252,19 +257,19 @@ if (spies.length > 0) {
     observe(spies)
     let windowH = window.innerHeight
     window.onresize = () => {
-        if (window.innerHeight !== windowH){
+        if (window.innerHeight !== windowH) {
             debounce(observe(spies), 500)
             windowH = window.innerHeight
         }
     }
 }
 
-let archive = function () {
+let archive = function() {
 
 }
 
 
-for (var i = 0; i < 5 ; i++) {
+for (var i = 0; i < 5; i++) {
     console.log(i)
 }
 console.log('n :', n)

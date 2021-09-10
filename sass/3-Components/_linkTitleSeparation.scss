@@ -1,0 +1,34 @@
+h1,
+h2,
+h3,
+h4 {
+    font-weight: normal;
+    margin: 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed white;
+}
+
+a {
+    color: inherit;
+    transition: opacity .3s;
+}
+
+.active {
+    opacity: 1;
+    font-size: 1rem;
+}
+
+a:hover {
+    opacity: .6;
+}
+
+.hr_y {
+    position: fixed;
+    width: 100vw;
+    height: 1px;
+    background: red;
+    border: none;
+}
